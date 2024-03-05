@@ -1,4 +1,3 @@
-"use strict";
 var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -11,9 +10,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _Negociacao_data, _Negociacao_quantidade, _Negociacao_valor;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Negociacao = void 0;
-class Negociacao {
+export class Negociacao {
     constructor(data, quantidade, valor) {
         _Negociacao_data.set(this, void 0);
         _Negociacao_quantidade.set(this, void 0);
@@ -35,5 +32,4 @@ class Negociacao {
         return __classPrivateFieldGet(this, _Negociacao_quantidade, "f") * this.valor;
     }
 }
-exports.Negociacao = Negociacao;
 _Negociacao_data = new WeakMap(), _Negociacao_quantidade = new WeakMap(), _Negociacao_valor = new WeakMap();
