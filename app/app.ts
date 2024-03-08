@@ -8,3 +8,4 @@ if (form) {
       controller.adicionar();
     });
   }
+ 
