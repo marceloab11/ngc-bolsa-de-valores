@@ -15,16 +15,21 @@ export class NegociacaoController {
         this.inputData = document.querySelector('#data') as HTMLInputElement;
         this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
         this.inputValor = document.querySelector('#valor') as HTMLInputElement;
-        this.negociacoesView.uptade(this.negociacoes);
+        this.negociacoesView.update(this.negociacoes);
         
     }
 
     adicionar(): void {
         const negociacao = this.criarNegociacao();
-        this.negociacoes.adicionar(negociacao)
-        this.negociacoesView.uptade(this.negociacoes)
-        this.mensagemView.update("Negociação adicionada com sucesso")
-        this.limparFormulario();
+        if(negociacao.data.getDay() > 0 && negociacao.data.getDay() < 6) {
+            this.negociacoes.adicionar(negociacao)
+            this.negociacoesView.update(this.negociacoes)
+            this.mensagemView.update("Negociação adicionada com sucesso")
+            this.limparFormulario();
+        } else {
+            this.mensagemView.update('Somente trasanções em dias úteis')
+        }
+        
     }
 
     criarNegociacao(): Negociacao {
