@@ -4,10 +4,10 @@ export abstract class View<T> {
     private escapar:boolean = false
 
     constructor(seletor:string, escapar?:boolean) {
+        this.elemento = document.querySelector(seletor)
         if(escapar) {
             this.escapar = escapar;
         }
-        this.elemento = document.querySelector(seletor)
     }
 
     public update(model: T):void {
